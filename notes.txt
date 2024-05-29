@@ -1,0 +1,32 @@
+SELECT IdNum, Fname, Mname, Lname, Birthdate from profile
+profile.IdNum
+profile.Fname
+profile.Mname
+profile.Lname
+profile.Birthdate
+region.Region_name
+province.Province_name
+city.City_name
+Barangay.Brgy_name
+
+
+SELECT profile.IdNum, profile.Fname, profile.Mname, profile.Lname profile.Bithdate FROM
+profile JOIN region on profile.Region = region.Region_id, region.Region_name
+
+
+SELECT 
+        Profile.IdNum, 
+        Profile.Fname, 
+        Profile.Mname, 
+        Profile.Lname, 
+        Profile.Birthdate,
+        Region.Region_name, 
+        Province.Province_name, 
+        City.City_name, 
+        Barangay.Brgy_name
+    FROM Profile
+    JOIN Region ON Profile.Region = Region.Region_id
+    JOIN Province ON Profile.Province = Province.Province_id
+    JOIN City ON Profile.City = City.City_id
+    JOIN Barangay ON Profile.Barangay = Barangay.Brgy_id;
+
